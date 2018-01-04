@@ -2,6 +2,7 @@ div#menu-container {
     position: relative;
     text-align: center;
     margin: 0 auto;
+    display: inline-block;
 }
 
 div.menu-item {
@@ -20,9 +21,24 @@ div.menu-item:hover {
 }
 
 
-.main-view{
-    border: 1px solid gold;
-    display: block;
+div#main-view{
+    vertical-align: top;
+    display: inline-block;
+}
+
+
+
+div#main-view{
+    border: 1px solid #dfdfdf;
+    border-radius: 0.3em;
+}
+
+ul.menu-list{
+    display: inline-block;
+}
+
+div#page-content {
+    margin-top: 1%;
 }
 
 @keyframes shine-in {

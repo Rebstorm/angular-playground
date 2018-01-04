@@ -10,14 +10,16 @@ import { Router } from '@angular/router';
 
 export class MenuItemComponent implements OnInit {
 
-  MENU : MenuItems[] = [];
+  MENU : MenuItems[] = [
+    { location : "fragment1", name : "fragment1" },
+    { location : "fragment2", name : "fragment2" },
+    { location : "fragment3", name : "fragment3" },
+    { location : "fragment4", name : "fragment4" },
+  ];
   
   // First thing that is called in the class. 
   constructor(private router: Router) {
-    for(var i = 0; i < 5; i++){
-      this.MENU.push(new MenuItems("menu-"+i, "new-slide"));
-    }
-
+    
   }
 
   // This is called after the constructor.
