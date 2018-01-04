@@ -1,0 +1,4 @@
+<div id="menu-container">
+  <div *ngFor="let menu of MENU" (click)="selectedMenu(menu)" class="menu-item">{{menu.name}}</div>
+  <router-outlet></router-outlet>
+</div>

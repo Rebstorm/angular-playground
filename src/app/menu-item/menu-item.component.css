@@ -1,0 +1,25 @@
+div#menu-container {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+}
+
+div.menu-item {
+    display: inline-block;
+    border-radius: 1em;
+    background-color: rgba(0, 0, 0, 0.438);
+    padding: 1em;
+    margin: 0em 1em 0em 1em;
+    transition: 0.3s cubic-bezier(.95,.05,.8,.04);
+    animation: 1s shine-in;
+}
+
+div.menu-item:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.138);
+}
+
+@keyframes shine-in {
+    0% {margin-top: 0.3em};
+    100% {margin-top: 1em;}
+}
