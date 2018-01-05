@@ -1,3 +1,8 @@
+nav.main-menu{
+    height:10vh;
+    box-shadow: -2px 5px 17px -7px rgba(0,0,0,0.52);
+}
+
 div#menu-container {
     position: relative;
     text-align: center;
@@ -5,14 +10,33 @@ div#menu-container {
     display: inline-block;
 }
 
-div.menu-item {
-    display: inline-block;
-    border-radius: 1em;
-    background-color: rgba(0, 0, 0, 0.438);
-    padding: 1em;
-    margin: 0em 1em 0em 1em;
-    transition: 0.3s cubic-bezier(.95,.05,.8,.04);
-    animation: 1s shine-in;
+li.menu-item {
+    border-radius: 0;
+    border: none;
+    transition: cubic-bezier(.17,.84,.44,1);
+}
+
+li.menu-item:active {
+        
+}
+
+
+/* Navbar */
+div#navbarSupportedContent{
+    
+}
+
+.navbar-collapse .collapse .show{
+    background: #fff;
+    z-index: 5;
+}
+
+
+/* MENU */
+ul.menu{
+    box-shadow: 5px 3px 9px -7px rgba(0,0,0,0.52);
+    padding:0;
+    height: 90vh;
 }
 
 div.menu-item:hover {
@@ -29,8 +53,10 @@ div#main-view{
 
 
 div#main-view{
+    /*
     border: 1px solid #dfdfdf;
     border-radius: 0.3em;
+    */
 }
 
 ul.menu-list{
@@ -38,7 +64,7 @@ ul.menu-list{
 }
 
 div#page-content {
-    margin-top: 1%;
+    /* margin-top: 1%;*/
 }
 
 li.menu-list:hover{
