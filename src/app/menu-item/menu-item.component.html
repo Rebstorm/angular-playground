@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-md navbar-light nav-bar">
+<nav class="navbar navbar-expand-md navbar-light nav-bar bg-color">
 
    <!-- brand -->
    <a class="navbar-brand" href="">#Logo</a>
@@ -24,11 +24,11 @@
 
 <div id="page-content" class="container col-12 float-left">
   <div class="row menu-row">
-    <ul class="list-group col-md-3 col-lg-2 col-xl-1 menu d-none d-lg-block" id="menu-list">
+    <ul class="list-group col-md-3 col-lg-2 col-xl-2 menu d-none d-lg-block" id="menu-list">
         <li class="list-group-item list-group-item-action menu-list menu-item" id="list-{{menu.name}}" *ngFor="let menu of MENU" (click)="selectedFragment(menu, $event)">{{menu.name}}</li>
     </ul>
 
-    <div id="main-view" class="col-sm-10 col-xl-11">  
+    <div id="main-view" class="col-sm-12 col-md-9 col-lg-9 col-xl-9">  
         <router-outlet class="main-view"></router-outlet>
     </div>
   </div>

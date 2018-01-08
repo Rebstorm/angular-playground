@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { MenuItem } from '../types/MenuItems';
 import { Router } from '@angular/router';
-import { Event } from '_debugger';
 
 @Component({
   selector: 'menu-item',
@@ -24,30 +23,34 @@ export class MenuItemComponent implements OnInit {
     
   }
 
-  // This is called after the constructor.
-  ngOnInit() {
-    
+  // When the dom has been initialized
+  ngAfterViewInit(){
     let t = document.location.pathname;
     t = t.split("/")[1];
-    
-    let e = new MenuItem(t, document.location.pathname);
-    this.selectedFragment(e, null);
+
+    let m = new MenuItem(t, document.location.pathname);
+    this.selectedFragment(m, null);
+  }
+
+  // This is called after the constructor.
+  ngOnInit() {
+     
 
   }
 
   selectedFragment(menu : MenuItem, event : Event): void{
-
     this.router.navigate(['/'+menu.location.toLocaleLowerCase()]);
-
+    
     resetList(); 
     resetMenuList();
+
     if(event == null){
       setReloadActive(menu);
     } else {
       setActive(event);
     }
 
-    function setActive(event : Event){
+    function setActive(event){
       let target = event.target.id;
       let targetComposite = target.split("-")[1];
 
@@ -66,12 +69,12 @@ export class MenuItemComponent implements OnInit {
     function setReloadActive(menu : MenuItem){
       // Menu
       if(document.getElementById("menu-"+menu.name) != null){
-        document.getElementById("menu-"+menu.name).parentElement.className = "nav-item active";
+        document.getElementById("menu-"+menu.name).parentElement.className += " active";
       }
 
       // List
       if(document.getElementById("list-"+menu.name) != null){
-        document.getElementById("list-"+menu.name).className = "list-group-item list-group-item-action menu-list menu-item active";
+        document.getElementById("list-"+menu.name).className += " active";
       }
     }
 

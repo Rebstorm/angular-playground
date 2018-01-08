@@ -18,7 +18,7 @@ const appRoutes: Routes = [
   { path: 'fragment2', component: Fragment2Component },
   { path: 'fragment3', component: Fragment3Component },
   { path: 'fragment4', component: Fragment4Component },
-  { path: '**', component: AppComponent }
+  { path: '**', component: Fragment1Component }
 ]
 
 

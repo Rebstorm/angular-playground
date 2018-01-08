@@ -3,43 +3,42 @@
 
 :root {
     --main-bg-color: #fff;
-    --main-active-color: #00ff00;
+    --main-active-color: #1F94CC;
+    --main-text-color: #fff;
+    --main-active-text-color: #333131;
+    --main-shade-color: #0C374C;
 }
 
+.bg-color{
+    background-color: var(--main-active-color, #1F94CC);
+    color: var(--main-text-color, #fff);
+}
+
+
+
+
+/* Navbar */
 nav.nav-bar{
     box-shadow: -2px 5px 17px -7px rgba(0,0,0,0.52);
 }
 
-div#menu-container {
-    position: relative;
-    text-align: center;
-    margin: 0 auto;
-    display: inline-block;
-}
-
-li.menu-item {
-    border-radius: 0;
-    border: none;
-    transition: cubic-bezier(.17,.84,.44,1);
-}
-
-li.menu-item:active{
-
-}
-
-
-/* Navbar */
 div#navbarSupportedContent{
-
     background: var(--main-bg-color);
     z-index: 10;
-    
 }
+
+
 
 .navbar-collapse .collapse .show{
     background: #fff;
     z-index: 5;
 }
+/* Couldnt find the actual way to change .active from child, so yeah. I feel bad */
+.navbar-nav>.active>a, .navbar-nav>.active>a:hover, .navbar-nav>.active>a:focus {
+    color:rgb(255, 255, 255);
+}
+
+
 
 
 /* MENU */
@@ -52,40 +51,83 @@ div.menu-item:hover {
     background-color: rgba(0, 0, 0, 0.138);
 }
 
+/* REAL CONTENT*/
 
-div#main-view{
-    vertical-align: top;
-    display: inline-block;
-}
-
-
-
-div#main-view{
-    padding-top: 1em;
+div#page-content {
+    height: calc(100vh - 56px);
 }
 
 div.menu-row{
     height: inherit;
 }
 
+
+/* FRAGMENT VIEW */
+div#main-view{
+    vertical-align: top;
+    display: inline-block;
+    padding-top: 1em;
+}
+
+
+/* FRAGMENT STUFF */
+div.fragment {
+    animation: fade-in 1s once;
+}
+
+
+
+/* SIDE MENU (ONLY FOR LG AND UP > 990 PX) */
 ul.menu{
     display: inline-block;
 }
 
-
 ul#menu-list{
-    padding: 1em 0 1em 0;
+    padding: 0 0 1em 0;
+    animation: 0.5s pop-in-right;
 }
 
-div#page-content {
-    height: calc(100vh - 56px);
+li.menu-item {
+    border-radius: 0;
+    border: none;
+    transition: cubic-bezier(.17,.84,.44,1);
 }
 
 li.menu-list:hover{
     cursor: pointer;
 }
 
+ul#menu-list > .active {
+    background-color: var(--main-shade-color, #0C374C );
+    color: var(--main-active-text-color, #fff);
+}
+
+
+/* ANIMATIONS */
+
 @keyframes shine-in {
     0% {margin-top: 0.3em};
     100% {margin-top: 1em;}
+}
+
+
+@keyframes pop-in-right {
+    0% { 
+        padding-left: 3%;
+        margin-left: 3%;
+    };
+    100% { 
+        padding-left: 0; 
+        margin-left: 0;
+    }; 
+}
+
+@keyframes pop-in-top {
+    0% { margin-top: 5% };
+    100% { margin-top: 0;};
+}
+
+@keyframes fade-in {
+    0% { opacity: 0;   }
+    100% { opacity: 1;  }
 }
