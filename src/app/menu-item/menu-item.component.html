@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-md navbar-light nav-bar">
 
    <!-- brand -->
-   <a class="navbar-brand" href="#">#Logo</a>
+   <a class="navbar-brand" href="">#Logo</a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -23,8 +23,8 @@
 <!-- This is page content -->
 
 <div id="page-content" class="container col-12 float-left">
-  <div class="row">
-    <ul class="list-group col-md-3 col-lg-2 col-xl-1 menu d-none d-lg-block">
+  <div class="row menu-row">
+    <ul class="list-group col-md-3 col-lg-2 col-xl-1 menu d-none d-lg-block" id="menu-list">
         <li class="list-group-item list-group-item-action menu-list menu-item" id="list-{{menu.name}}" *ngFor="let menu of MENU" (click)="selectedFragment(menu, $event)">{{menu.name}}</li>
     </ul>
 

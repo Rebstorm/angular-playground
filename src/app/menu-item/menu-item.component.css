@@ -1,10 +1,12 @@
 
-body {
+/* META STUFF */
+
+:root {
     --main-bg-color: #fff;
+    --main-active-color: #00ff00;
 }
 
 nav.nav-bar{
-    background-color: var(--main-bg-color);
     box-shadow: -2px 5px 17px -7px rgba(0,0,0,0.52);
 }
 
@@ -16,13 +18,12 @@ div#menu-container {
 }
 
 li.menu-item {
-    background:transparent;
     border-radius: 0;
     border: none;
     transition: cubic-bezier(.17,.84,.44,1);
 }
 
-li.menu-item:active {
+li.menu-item:active{
 
 }
 
@@ -43,7 +44,7 @@ div#navbarSupportedContent{
 
 /* MENU */
 ul.menu{
-    box-shadow: 5px 3px 9px -7px rgba(0,0,0,0.52);
+    box-shadow: 18px 2px 7px -15px rgba(0,0,0,0.52);
 }
 
 div.menu-item:hover {
@@ -60,18 +61,24 @@ div#main-view{
 
 
 div#main-view{
-    /*
-    border: 1px solid #dfdfdf;
-    border-radius: 0.3em;
-    */
+    padding-top: 1em;
 }
 
-ul.menu-list{
+div.menu-row{
+    height: inherit;
+}
+
+ul.menu{
     display: inline-block;
 }
 
+
+ul#menu-list{
+    padding: 1em 0 1em 0;
+}
+
 div#page-content {
-    height: calc(100% - 56px);
+    height: calc(100vh - 56px);
 }
 
 li.menu-list:hover{
