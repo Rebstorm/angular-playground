@@ -1,5 +1,10 @@
-nav.main-menu{
-    height:10vh;
+
+body {
+    --main-bg-color: #fff;
+}
+
+nav.nav-bar{
+    background-color: var(--main-bg-color);
     box-shadow: -2px 5px 17px -7px rgba(0,0,0,0.52);
 }
 
@@ -11,18 +16,22 @@ div#menu-container {
 }
 
 li.menu-item {
+    background:transparent;
     border-radius: 0;
     border: none;
     transition: cubic-bezier(.17,.84,.44,1);
 }
 
 li.menu-item:active {
-        
+
 }
 
 
 /* Navbar */
 div#navbarSupportedContent{
+
+    background: var(--main-bg-color);
+    z-index: 10;
     
 }
 
@@ -35,8 +44,6 @@ div#navbarSupportedContent{
 /* MENU */
 ul.menu{
     box-shadow: 5px 3px 9px -7px rgba(0,0,0,0.52);
-    padding:0;
-    height: 90vh;
 }
 
 div.menu-item:hover {
@@ -64,7 +71,7 @@ ul.menu-list{
 }
 
 div#page-content {
-    /* margin-top: 1%;*/
+    height: calc(100% - 56px);
 }
 
 li.menu-list:hover{
